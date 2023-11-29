@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
       </div>
 
-      {!submitted ? 
+      {!submitted ?
       <div className="app__footer-form app__flex">
         <div className="app__flex">
           <input
@@ -87,7 +87,7 @@ const Footer = () => {
         >
           { loading ? 'Sending' : 'Send Message' }
         </button>
-      </div> : 
+      </div> :
       <div>
         <h3 className="head-text">Thank You for getting in touch</h3>
       </div>}

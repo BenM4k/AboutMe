@@ -21,7 +21,7 @@ const Work = () => {
        setFilterWork(data);
      })
   }, [])
-  
+
   const handleWorkFilter = (item) =>{
     setActiveFilter(item);
     setAnimateCard([ {y:100, opacity:0} ]);
@@ -36,7 +36,7 @@ const Work = () => {
       }
     })
   }
-  
+
   return (
     <>
       <h2 className="head-text">My Creative <span>Portfolio</span> Section</h2>
@@ -60,7 +60,7 @@ const Work = () => {
         transition={{ duration: 0.5, delayChildren: 0.5 }}
         className = "app__work-portfolio"
       >
-        {filterWork.map((work, index) => (
+        {filterWork?.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
               <img src={urlFor(work.imgUrl)} alt={work.name} />
@@ -68,14 +68,14 @@ const Work = () => {
               <motion.div
                 whileHover = {{ opacity: [0, 1]}}
                 transition = {{ duration: 0.25, ease: 'easeInOut', staggerChildren: 0.5 }}
-                className = "app__work-hover app_flex" 
+                className = "app__work-hover app_flex"
               >
                 <a href={work.projectLink} target="blank" rel='noreferrer'>
                   <motion.div
                     whileInView = {{ scale: [0, 1]}}
                     whileHover = {{ scale: [1, 0.9]}}
                     transition = {{ duration: 0.25}}
-                    className = "app_flex" 
+                    className = "app_flex"
                   >
                     <AiFillEye />
                   </motion.div>
@@ -85,7 +85,7 @@ const Work = () => {
                     whileInView = {{ scale: [0, 1]}}
                     whileHover = {{ scale: [1, 0.9]}}
                     transition = {{ duration: 0.25}}
-                    className = "app_flex" 
+                    className = "app_flex"
                   >
                     <AiFillGithub />
                   </motion.div>

@@ -23,7 +23,7 @@ const Testimonials = () => {
      .then((data) =>{
       setTestimonials(data)
      })
-     
+
      client.fetch(brandsQuery)
       .then((data) =>{
         setBrands(data)
@@ -31,18 +31,17 @@ const Testimonials = () => {
   }, []);
 
   const test = testimonials[currentIndex];
-  console.log(brands);
   return (
     <>
-      {testimonials.length && (
+      {testimonials.length != 0 && (
         <>
           <div className="app__testimonial-item app__flex">
-            <img src={urlFor(test.imgurl)} alt="testimonial" />
+            <img src={urlFor(test?.imgurl)} alt="testimonial" />
             <div className="app__testimonial-content">
-              <p className="p-text">{test.feedback}</p>
+              <p className="p-text">{test?.feedback}</p>
               <div className="">
-                <h4 className="bold-text">{test.name}</h4>
-                <h5 className="p-text">{test.company}</h5>
+                <h4 className="bold-text">{test?.name}</h4>
+                <h5 className="p-text">{test?.company}</h5>
               </div>
             </div>
           </div>
@@ -63,7 +62,7 @@ const Testimonials = () => {
                 transition={{ duration: 0.5, type: 'tween'}}
                 key={brand._id}
               >
-                <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+                <img src={urlFor(brand?.imgUrl)} alt={brand.name} />
               </motion.div>
             ))}
           </div>

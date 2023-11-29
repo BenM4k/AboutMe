@@ -33,12 +33,12 @@ const Header = () => {
             </div>
 
             <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developper<br/></p>
-            <p className="p-text">FrontEnd</p>
+            <p className="p-text">Web Developer<br/></p>
+            <p className="p-text">Full-Stack</p>
             </div>
           </div>
         </div>
-      </motion.div> 
+      </motion.div>
 
       <motion.div
         whileInView={{ opacity: [0, 1] }}
@@ -65,7 +65,7 @@ const Header = () => {
             <div className="circle-cmp app__flex" key={`circle-${index}`}>
               <img src={circle} alt="circle" />
             </div>
-          )          
+          )
         })}
       </motion.div>
     </div>

@@ -20,13 +20,13 @@ const Skills = () => {
      .then((data) =>{
       setExperience(data)
      })
-     
+
      client.fetch(skillsQuery)
       .then((data) =>{
        setSkills(data)
       })
   }, []);
-  
+
   return (
     <>
       <h2 className="head-text"><span>Skills</span> and Experience</h2>
@@ -38,10 +38,10 @@ const Skills = () => {
               whileInView={{opacity: [0, 1]}}
               transition={{ duration: 0.5 }}
               className = "app__skills-item app__flex"
-              key={skill.name}
+              key={skill?.name}
             >
-              <div className="app__flex" style={{ backgroundColor: skill.bgColor }}>
-                <img src={urlFor(skill.icon)} alt={skill.name} />
+              <div className="app__flex" style={{ backgroundColor: skill?.bgColor }}>
+                <img src={urlFor(skill?.icon)} alt={skill?.name} />
               </div>
 
               <p className="p-text">{skill.name}</p>
@@ -53,14 +53,14 @@ const Skills = () => {
             {experience?.map((experience) => (
               <motion.div
                 className='app__skills-exp-item'
-                key={experience.year}
+                key={experience?.year}
               >
                 <div className="app__skills-exp-year">
                   <p className="bold-text">{experience.year}</p>
                 </div>
 
                 <motion.div className='app__skills-exp-works'>
-                  {experience.works.map((work) => (
+                  {experience.works?.map((work) => (
                     <>
                       <motion.div
                         whileInView={{opacity: [0, 1]}}
@@ -86,7 +86,6 @@ const Skills = () => {
                 </motion.div>
 
               </motion.div>))}
-              
         </motion.div>
       </div>
     </>
